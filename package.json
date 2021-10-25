@@ -18,6 +18,8 @@
   "homepage": "https://github.com/lazrekm/employee-management-system#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql2": "^2.3.2"
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.2",
+    "requirer": "0.0.4"
   }
 }
