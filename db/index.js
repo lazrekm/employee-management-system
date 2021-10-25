@@ -1,6 +1,8 @@
+// dependencies
 const inquirer = require("inquirer");
 const connection = require("./connection.js");
 
+//function with list of options
 function runSearch() {
   inquirer
     .prompt({
@@ -18,6 +20,7 @@ function runSearch() {
         "Quit",
       ],
     })
+    // switch statement to handle response
     .then(function (answer) {
       switch (answer.action) {
         case "View All Departments":
@@ -55,6 +58,7 @@ function runSearch() {
     });
 }
 
+//function to view all departments
 function viewDepartments() {
     var query = "SELECT department.id, department.name FROM department;";
     connection.query(query, function (err, res) {
@@ -62,7 +66,7 @@ function viewDepartments() {
       runSearch();
     });
   }
-  
+  // //function to view all employees
   function viewEmployees() {
     var query =
       "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id LEFT JOIN employee manager on manager.id = employee.manager_id;";
@@ -72,6 +76,7 @@ function viewDepartments() {
     });
   }
   
+  //function to view all roles
   function viewRoles() {
     var query =
       "SELECT role.id, role.title, department.name AS department, role.salary FROM role LEFT JOIN department on role.department_id = department.id;";
@@ -81,6 +86,7 @@ function viewDepartments() {
     });
   }
   
+  // //function to create an employee
   function addEmployee() {
     inquirer
       .prompt([
@@ -121,7 +127,7 @@ function viewDepartments() {
         );
       });
   }
-  
+  // fuhntion de add a role 
   function addRole() {
     inquirer
       .prompt([
@@ -158,6 +164,7 @@ function viewDepartments() {
       });
   }
   
+  //function to create a department
   function addDepartment() {
     inquirer
       .prompt([
@@ -177,6 +184,7 @@ function viewDepartments() {
       });
   }
   
+  //function to update and employee role
   function updateEmployeeRole() {
     inquirer
       .prompt([
