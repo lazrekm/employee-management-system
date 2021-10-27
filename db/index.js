@@ -169,7 +169,7 @@ viewDepartments = () => {
   connection.query("SELECT * FROM department", function (err, res) {
     const table = cTable.getTable(res);
     console.log(table);
-    main();
+    runSearch();
   });
 };
 // //function to view all employees
@@ -178,7 +178,7 @@ viewEmployees = () => {
     "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, CONCAT(manager.first_name, ' ', manager.last_name) AS manager FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id LEFT JOIN employee manager on manager.id = employee.manager_id;";
   connection.query(query, function (err, res) {
     console.table(res);
-    main();
+    runSearch();
   });
 };
 
@@ -187,7 +187,7 @@ viewRoles = () => {
   connection.query("SELECT * FROM role", function (err, res) {
     const table = cTable.getTable(res);
     console.log(table);
-    main();
+    runSearch();
   });
 };
 
