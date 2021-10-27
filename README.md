@@ -16,4 +16,4 @@ update employee roles.
 
 ## Walkthrough
 
- [![usage video](usage.gif)](https://drive.google.com/file/d/1g27MtLPTS7oH0b5y19C0BOb47tVehMlq/view?usp=sharing "Click Me!")
+ [![usage video](usage.gif)](https://drive.google.com/file/d/16QxwFq_XPRPl90_SSKibp2ZeaPNbbQ-l/view?usp=sharing "Click Me!")
